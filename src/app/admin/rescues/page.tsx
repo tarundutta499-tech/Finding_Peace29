@@ -7,7 +7,10 @@ import { FileText, Plus, Loader2 } from "lucide-react";
 
 type Rescue = {
   id: string;
-  title: string;
+  title?: string;
+  condition?: string;
+  reporterName?: string;
+  reporterPhone?: string;
   location: string;
   status: string;
   createdAt: unknown;
@@ -153,8 +156,14 @@ export default function ManageRescues() {
                   <div className="flex items-start gap-4">
                     <div className="mt-1 h-2.5 w-2.5 rounded-full bg-primary shrink-0" />
                     <div>
-                      <h4 className="font-semibold text-foreground">{rescue.title}</h4>
+                      <h4 className="font-semibold text-foreground">{rescue.title || "Emergency Report"}</h4>
                       <p className="text-sm text-muted-foreground mt-0.5">{rescue.location}</p>
+                      {!rescue.title && rescue.condition && (
+                        <p className="text-xs text-muted-foreground mt-1 line-clamp-1">{rescue.condition}</p>
+                      )}
+                      {rescue.reporterName && (
+                        <p className="text-xs text-primary/80 mt-1 font-medium">Reported by: {rescue.reporterName} ({rescue.reporterPhone})</p>
+                      )}
                     </div>
                   </div>
                   <div className="text-right">

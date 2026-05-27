@@ -1,57 +1,60 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, MapPin, Search } from "lucide-react";
-
-// Mock data (would come from Firebase)
-const MOCK_RESCUES = [
-  {
-    id: 1,
-    title: "Raju the Abandoned Calf",
-    animalType: "Cow",
-    date: "May 15, 2026",
-    location: "Main Market, Jaitsar",
-    beforeImg: "/images/img1.jpg",
-    afterImg: "/images/img3.jpg",
-    story: "Raju was found wandering near the main market with a severe leg injury. He was malnourished and in pain. Our team brought him to the shelter, performed minor surgery on his leg, and provided him with a nutritious diet. After 3 months of care, Raju is now healthy and playful.",
-    category: "Cows"
-  },
-  {
-    id: 2,
-    title: "Sheru's Second Chance",
-    animalType: "Dog",
-    date: "April 22, 2026",
-    location: "Railway Station Road",
-    beforeImg: "/images/img6.jpg",
-    afterImg: "/images/img7.jpg",
-    story: "Hit by a speeding vehicle, Sheru was left paralyzed on the road. We rushed him to our emergency care unit. Though he lost the use of his hind legs, we custom-built a dog wheelchair for him. Today, he runs faster than ever!",
-    category: "Dogs"
-  },
-  {
-    id: 3,
-    title: "Rescuing an Injured Kite",
-    animalType: "Bird",
-    date: "March 10, 2026",
-    location: "City Park",
-    beforeImg: "/images/img4.jpg",
-    afterImg: "/images/img2.jpg",
-    story: "Found tangled in glass-coated kite string (manja), this beautiful bird had deep cuts on its wings. After careful extraction and weeks of rehabilitation in our aviary, it was successfully released back into the wild.",
-    category: "Birds"
-  }
-];
+import { Calendar, MapPin, Search, Loader2 } from "lucide-react";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 const CATEGORIES = ["All", "Dogs", "Cows", "Cats", "Birds", "Other"];
+
+type Rescue = {
+  id: string;
+  title?: string;
+  animalType?: string;
+  date?: string;
+  location: string;
+  beforeImg?: string;
+  afterImg?: string;
+  story?: string;
+  category?: string;
+  status: string;
+  createdAt: unknown;
+};
 
 export default function RescuesPage() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
+  const [rescues, setRescues] = useState<Rescue[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const filteredRescues = MOCK_RESCUES.filter(rescue => {
+  useEffect(() => {
+    const fetchRescues = async () => {
+      try {
+        if (!db.collection) {
+          setLoading(false);
+          return;
+        }
+        const q = query(collection(db, "rescues"), orderBy("createdAt", "desc"));
+        const snapshot = await getDocs(q);
+        const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })) as Rescue[];
+        
+        // Filter out raw emergency reports. Only show rescues that have a title and a story assigned by admin.
+        const publicRescues = data.filter(r => r.title && r.story);
+        setRescues(publicRescues);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchRescues();
+  }, []);
+
+  const filteredRescues = rescues.filter(rescue => {
     const matchesCategory = activeCategory === "All" || rescue.category === activeCategory;
-    const matchesSearch = rescue.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                          rescue.story.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesSearch = (rescue.title?.toLowerCase() || "").includes(searchTerm.toLowerCase()) || 
+                          (rescue.story?.toLowerCase() || "").includes(searchTerm.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
@@ -107,20 +110,28 @@ export default function RescuesPage() {
       {/* Grid */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            layout
-            className="grid grid-cols-1 lg:grid-cols-2 gap-10"
-          >
-            <AnimatePresence>
-              {filteredRescues.map((rescue) => (
-                <RescueCard key={rescue.id} rescue={rescue} />
-              ))}
-            </AnimatePresence>
-          </motion.div>
-          {filteredRescues.length === 0 && (
-            <div className="text-center py-20 text-muted-foreground">
-              No rescue stories found matching your criteria.
+          {loading ? (
+            <div className="flex justify-center items-center py-32">
+              <Loader2 className="h-12 w-12 text-primary animate-spin" />
             </div>
+          ) : (
+            <>
+              <motion.div 
+                layout
+                className="grid grid-cols-1 lg:grid-cols-2 gap-10"
+              >
+                <AnimatePresence>
+                  {filteredRescues.map((rescue) => (
+                    <RescueCard key={rescue.id} rescue={rescue} />
+                  ))}
+                </AnimatePresence>
+              </motion.div>
+              {filteredRescues.length === 0 && (
+                <div className="text-center py-20 text-muted-foreground">
+                  No rescue stories found matching your criteria.
+                </div>
+              )}
+            </>
           )}
         </div>
       </section>
@@ -128,7 +139,7 @@ export default function RescuesPage() {
   );
 }
 
-function RescueCard({ rescue }: { rescue: any }) {
+function RescueCard({ rescue }: { rescue: Rescue }) {
   return (
     <motion.div
       layout

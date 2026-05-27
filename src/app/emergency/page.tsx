@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { PhoneCall, MessageCircle, MapPin, Camera, AlertTriangle, Send } from "lucide-react";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 export default function EmergencyPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -27,14 +28,41 @@ export default function EmergencyPage() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [reporterName, setReporterName] = useState("");
+  const [reporterPhone, setReporterPhone] = useState("");
+  const [description, setDescription] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
+    
+    try {
+      if (db.collection) {
+        await addDoc(collection(db, "rescues"), {
+          reporterName,
+          reporterPhone,
+          condition: description,
+          location: coordinates || "Location not provided",
+          status: "Reported",
+          createdAt: serverTimestamp()
+        });
+      }
+      
+      const text = `🚨 *New Animal Emergency!* 🚨\n*Name:* ${reporterName}\n*Phone:* ${reporterPhone}\n*Location:* ${coordinates}\n*Details:* ${description}`;
+      window.open(`https://wa.me/919983297394?text=${encodeURIComponent(text)}`, "_blank");
+      
+      alert("Emergency report submitted successfully. Our team has been notified via WhatsApp.");
+      
+      setReporterName("");
+      setReporterPhone("");
+      setDescription("");
+      setCoordinates("");
+    } catch (error) {
+      console.error("Error submitting report:", error);
+      alert("Failed to submit report. Please try calling directly.");
+    } finally {
       setIsSubmitting(false);
-      alert("Emergency report submitted successfully. Our team has been notified.");
-    }, 1500);
+    }
   };
 
   return (
@@ -75,17 +103,17 @@ export default function EmergencyPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-semibold text-foreground">Your Name</label>
-                    <input required type="text" className="w-full bg-muted border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="John Doe" />
+                    <input required type="text" value={reporterName} onChange={(e) => setReporterName(e.target.value)} className="w-full bg-muted border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="John Doe" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-semibold text-foreground">Phone Number</label>
-                    <input required type="tel" className="w-full bg-muted border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="+91 XXXXX XXXXX" />
+                    <input required type="tel" value={reporterPhone} onChange={(e) => setReporterPhone(e.target.value)} className="w-full bg-muted border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="+91 XXXXX XXXXX" />
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-foreground">Animal Type & Condition</label>
-                  <textarea required rows={3} className="w-full bg-muted border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="E.g., A street dog hit by a bike, bleeding from the hind leg..."></textarea>
+                  <textarea required rows={3} value={description} onChange={(e) => setDescription(e.target.value)} className="w-full bg-muted border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="E.g., A street dog hit by a bike, bleeding from the hind leg..."></textarea>
                 </div>
 
                 <div className="space-y-2">
