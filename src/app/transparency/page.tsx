@@ -203,10 +203,10 @@ export default function TransparencyPage() {
 
                 {paymentMethod === "bank" && (
                   <motion.div initial={{opacity:0}} animate={{opacity:1}} className="w-full max-w-md mx-auto space-y-4">
-                    <BankDetail label="Account Name" value="Finding Peace 29 Animal Rescue" />
-                    <BankDetail label="Account Number" value="0123456789101112" />
-                    <BankDetail label="IFSC Code" value="ICIC0000123" />
-                    <BankDetail label="Bank Branch" value="Jaitsar Main Branch" />
+                    <BankDetail label="Account Name" value="Finding Peace Sansthan Jaitsar" />
+                    <BankDetail label="Account Number" value="43527315639" />
+                    <BankDetail label="IFSC Code" value="SBIN0050852" />
+                    <BankDetail label="Bank Name" value="SBI Bank" />
                     <BankDetail label="Account Type" value="Current Account" />
                   </motion.div>
                 )}
