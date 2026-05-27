@@ -10,7 +10,7 @@ type Rescue = {
   title: string;
   location: string;
   status: string;
-  createdAt: any;
+  createdAt: unknown;
 };
 
 export default function ManageRescues() {
@@ -21,10 +21,6 @@ export default function ManageRescues() {
   const [location, setLocation] = useState("");
   const [status, setStatus] = useState("Dispatched");
   const [submitting, setSubmitting] = useState(false);
-
-  useEffect(() => {
-    fetchRescues();
-  }, []);
 
   const fetchRescues = async () => {
     try {
@@ -52,6 +48,10 @@ export default function ManageRescues() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    fetchRescues();
+  }, []);
 
   const handleAddRescue = async (e: React.FormEvent) => {
     e.preventDefault();

@@ -36,7 +36,7 @@ const CATEGORIES = ["All", "Rescues", "Feeding Drives", "Treatments", "Team Work
 
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [selectedImage, setSelectedImage] = useState<any>(null);
+  const [selectedImage, setSelectedImage] = useState<unknown>(null);
 
   const filteredImages = GALLERY_IMAGES.filter(img => 
     activeCategory === "All" || img.category === activeCategory
@@ -52,7 +52,7 @@ export default function GalleryPage() {
             Our <span className="text-primary">Gallery</span>
           </h1>
           <p className="max-w-2xl mx-auto text-lg text-muted-foreground mb-8">
-            A visual journey of compassion. See the faces of the lives you've helped save and the incredible work of our volunteers on the ground.
+            A visual journey of compassion. See the faces of the lives you&apos;ve helped save and the incredible work of our volunteers on the ground.
           </p>
 
           <div className="flex flex-wrap justify-center gap-2">
