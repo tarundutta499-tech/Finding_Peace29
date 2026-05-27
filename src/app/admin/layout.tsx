@@ -86,7 +86,6 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <AdminLink href="/admin" icon={<LayoutDashboard />} label="Dashboard" active={pathname === "/admin"} />
           <AdminLink href="/admin/expenses" icon={<IndianRupee />} label="Manage Expenses" active={pathname === "/admin/expenses"} />
           <AdminLink href="/admin/rescues" icon={<FileText />} label="Manage Rescues" active={pathname === "/admin/rescues"} />
-          <AdminLink href="/admin/gallery" icon={<ImageIcon />} label="Manage Gallery" active={pathname === "/admin/gallery"} />
         </div>
         <div className="p-4 border-t border-border">
           <button onClick={handleLogout} className="w-full flex items-center gap-2 text-destructive hover:bg-destructive/10 px-4 py-2 rounded-lg transition-colors font-medium text-sm">
