@@ -68,7 +68,7 @@ export function Navbar() {
             })}
             <div className="ml-4 flex items-center">
               <Link
-                href="/transparency"
+                href="/transparency#donate"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground px-5 py-2.5 rounded-full text-sm font-bold shadow-md hover:shadow-lg transition-all flex items-center gap-2"
               >
                 Donate Now
@@ -123,7 +123,7 @@ export function Navbar() {
               })}
               <div className="px-3 pt-4 pb-2">
                 <Link
-                  href="/transparency"
+                  href="/transparency#donate"
                   onClick={() => setIsOpen(false)}
                   className="w-full flex justify-center items-center gap-2 bg-primary text-primary-foreground px-4 py-3 rounded-xl font-bold shadow-md"
                 >

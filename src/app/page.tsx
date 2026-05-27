@@ -37,7 +37,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
               <Link 
-                href="/transparency" 
+                href="/transparency#donate" 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-full text-lg font-bold shadow-lg shadow-primary/20 hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-2"
               >
                 Donate Now <Heart className="h-5 w-5 fill-current" />
