@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #FDFBF7;
+  --foreground: #1A1A1A;
+
+  --card: #FFFFFF;
+  --card-foreground: #1A1A1A;
+
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
+
+  --primary: #E85D04;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #5B8A72;
+  --secondary-foreground: #FFFFFF;
+
+  --muted: #F3F0E6;
+  --muted-foreground: #6B7280;
+
+  --accent: #F9A03F;
+  --accent-foreground: #1A1A1A;
+
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+
+  --border: #E5E0D8;
+  --input: #E5E0D8;
+  --ring: #E85D04;
+
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: #121212;
+  --foreground: #EDEDED;
+
+  --card: #1E1E1E;
+  --card-foreground: #EDEDED;
+
+  --popover: #1E1E1E;
+  --popover-foreground: #EDEDED;
+
+  --primary: #F48C42;
+  --primary-foreground: #1A1A1A;
+
+  --secondary: #74A88E;
+  --secondary-foreground: #1A1A1A;
+
+  --muted: #2A2A2A;
+  --muted-foreground: #A1A1AA;
+
+  --accent: #F9A03F;
+  --accent-foreground: #1A1A1A;
+
+  --destructive: #EF4444;
+  --destructive-foreground: #1A1A1A;
+
+  --border: #333333;
+  --input: #333333;
+  --ring: #F48C42;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-merriweather);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
