@@ -86,7 +86,7 @@ export default function TransparencyPage() {
                         <Cell key={`cell-${index}`} fill={entry.color} />
                       ))}
                     </Pie>
-                    <RechartsTooltip formatter={(value) => `₹${value.toLocaleString()}`} />
+                    <RechartsTooltip formatter={(value) => `₹${Number(value).toLocaleString()}`} />
                   </PieChart>
                 </ResponsiveContainer>
               </div>
@@ -109,7 +109,7 @@ export default function TransparencyPage() {
                     <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E5E0D8" />
                     <XAxis dataKey="month" axisLine={false} tickLine={false} />
                     <YAxis axisLine={false} tickLine={false} tickFormatter={(value) => `₹${value/1000}k`} />
-                    <RechartsTooltip formatter={(value) => `₹${value.toLocaleString()}`} cursor={{fill: '#F3F0E6'}}/>
+                    <RechartsTooltip formatter={(value) => `₹${Number(value).toLocaleString()}`} cursor={{fill: '#F3F0E6'}}/>
                     <Legend />
                     <Bar dataKey="donations" name="Donations" fill="#5B8A72" radius={[4, 4, 0, 0]} />
                     <Bar dataKey="expenses" name="Expenses" fill="#E85D04" radius={[4, 4, 0, 0]} />
