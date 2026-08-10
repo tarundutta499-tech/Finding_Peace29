@@ -218,7 +218,7 @@ export default function TransparencyPage() {
             
             <div className="bg-muted/50 p-6 text-center border-t border-border">
               <p className="text-sm text-muted-foreground">
-                For 80G tax exemption receipts, please email your PAN and transaction details to <span className="font-bold text-foreground">donations@findingpeace29.org</span>.
+                For 80G tax exemption receipts, please email your PAN and transaction details to <span className="font-bold text-foreground">donations@findingpeace29.com</span>.
               </p>
             </div>
           </div>

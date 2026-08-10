@@ -59,7 +59,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             {authError && <div className="p-3 bg-destructive/10 text-destructive text-sm rounded-xl text-center font-medium">{authError}</div>}
             <div>
               <label className="text-sm font-semibold mb-1 block">Admin Email</label>
-              <input type="email" required value={email} onChange={e => setEmail(e.target.value)} className="w-full bg-muted border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="admin@findingpeace29.org" />
+              <input type="email" required value={email} onChange={e => setEmail(e.target.value)} className="w-full bg-muted border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="admin@findingpeace29.com" />
             </div>
             <div>
               <label className="text-sm font-semibold mb-1 block">Password</label>

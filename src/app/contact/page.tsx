@@ -77,8 +77,8 @@ export default function ContactPage() {
                     <div>
                       <h4 className="font-bold text-foreground text-lg">Email Addresses</h4>
                       <div className="mt-1 space-y-1">
-                        <p className="text-muted-foreground">Help: <a href="mailto:help@findingpeace29.org" className="hover:text-foreground transition-colors">help@findingpeace29.org</a></p>
-                        <p className="text-muted-foreground">Donations: <a href="mailto:donations@findingpeace29.org" className="hover:text-foreground transition-colors">donations@findingpeace29.org</a></p>
+                        <p className="text-muted-foreground">Help: <a href="mailto:help@findingpeace29.com" className="hover:text-foreground transition-colors">help@findingpeace29.com</a></p>
+                        <p className="text-muted-foreground">Donations: <a href="mailto:donations@findingpeace29.com" className="hover:text-foreground transition-colors">donations@findingpeace29.com</a></p>
                       </div>
                     </div>
                   </div>
