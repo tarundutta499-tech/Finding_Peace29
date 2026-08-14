@@ -29,10 +29,15 @@ const GALLERY_IMAGES = [
   { id: 21, src: "/images/Achievements 6.jpg", title: "NGO Achievement", category: "Achievements", span: "md:col-span-1 md:row-span-1" },
   { id: 22, src: "/images/Achievements 7.jpg", title: "NGO Achievement", category: "Achievements", span: "md:col-span-1 md:row-span-1" },
   { id: 23, src: "/images/Achievements 8.jpg", title: "NGO Achievement", category: "Achievements", span: "md:col-span-1 md:row-span-1" },
-  { id: 24, src: "/images/Achievements 9.jpg", title: "NGO Achievement", category: "Achievements", span: "md:col-span-1 md:row-span-1" }
+  { id: 24, src: "/images/Achievements 9.jpg", title: "NGO Achievement", category: "Achievements", span: "md:col-span-1 md:row-span-1" },
+  { id: 25, src: "/images/award_ngo.jpg", title: "Best NGO Award Ceremony", category: "Achievements", span: "md:col-span-1 md:row-span-1" },
+  { id: 26, src: "/images/calf_care.jpg", title: "Caring for Injured Calf", category: "Treatments", span: "md:col-span-1 md:row-span-1" },
+  { id: 27, src: "/images/clay_pots.jpg", title: "Distributing Clay Bird Feeders", category: "Team Work", span: "md:col-span-1 md:row-span-1" },
+  { id: 28, src: "/images/tree_plantation_1.jpg", title: "Watering New Saplings", category: "Plantation", span: "md:col-span-1 md:row-span-1" },
+  { id: 29, src: "/images/tree_plantation_2.jpg", title: "Securing Plant Tree-Guards", category: "Plantation", span: "md:col-span-1 md:row-span-1" }
 ];
 
-const CATEGORIES = ["All", "Rescues", "Feeding Drives", "Treatments", "Team Work", "Certificates", "Achievements"];
+const CATEGORIES = ["All", "Rescues", "Feeding Drives", "Treatments", "Team Work", "Certificates", "Achievements", "Plantation"];
 
 export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState("All");
