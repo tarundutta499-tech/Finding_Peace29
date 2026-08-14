@@ -58,6 +58,12 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/hospital" className="text-muted-foreground hover:text-white transition-colors text-sm flex items-center gap-2">
+                  <span className="h-1 w-1 bg-primary rounded-full"></span>
+                  Hospital Project
+                </Link>
+              </li>
+              <li>
                 <Link href="/rescues" className="text-muted-foreground hover:text-white transition-colors text-sm flex items-center gap-2">
                   <span className="h-1 w-1 bg-primary rounded-full"></span>
                   Rescue Stories

@@ -10,6 +10,7 @@ const links = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
   { name: "Founder's Message", path: "/founder" },
+  { name: "Hospital Project", path: "/hospital" },
   { name: "Rescue Stories", path: "/rescues" },
   { name: "Transparency", path: "/transparency" },
   { name: "Emergency Help", path: "/emergency" },
