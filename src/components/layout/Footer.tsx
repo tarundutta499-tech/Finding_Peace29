@@ -52,6 +52,12 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/founder" className="text-muted-foreground hover:text-white transition-colors text-sm flex items-center gap-2">
+                  <span className="h-1 w-1 bg-primary rounded-full"></span>
+                  Founder's Message
+                </Link>
+              </li>
+              <li>
                 <Link href="/rescues" className="text-muted-foreground hover:text-white transition-colors text-sm flex items-center gap-2">
                   <span className="h-1 w-1 bg-primary rounded-full"></span>
                   Rescue Stories

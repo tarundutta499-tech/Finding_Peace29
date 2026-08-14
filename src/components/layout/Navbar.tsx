@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const links = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
+  { name: "Founder's Message", path: "/founder" },
   { name: "Rescue Stories", path: "/rescues" },
   { name: "Transparency", path: "/transparency" },
   { name: "Emergency Help", path: "/emergency" },
