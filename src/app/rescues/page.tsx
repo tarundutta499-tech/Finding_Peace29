@@ -50,6 +50,17 @@ const MOCK_RESCUES = [
     afterImg: "/images/cow_prolapse_after.jpg",
     story: "We received an urgent call from 7 GB village regarding a cow suffering from a severe, life-threatening uterine prolapse. She was in excruciating pain, and the exposed tissue was at high risk of a fatal infection. Our medical team immediately reached the location, carefully cleaned and disinfected the area, performed the complex tissue reduction and replacement, and secured it. After several days of intensive antibiotic care, wound dressing, and special feeding at our shelter, the cow made a full recovery. Today, she is completely healthy, infection-free, and living happily in our sanctuary.",
     category: "Cows"
+  },
+  {
+    id: 5,
+    title: "Billo: Battling Cancer to Find a Family",
+    animalType: "Dog",
+    date: "October 18, 2023",
+    location: "Jaitsar",
+    beforeImg: "/images/dog_cancer_before.jpg",
+    afterImg: "/images/dog_cancer_after.jpg",
+    story: "Billo was found with a large, painful malignant tumor growing on her neck and was diagnosed with cancer in 2023. Our team took immediate action and initiated a rigorous chemotherapy plan. Over a long and challenging four months of treatment, Billo showed incredible strength and recovered fully, beating cancer completely. Today, she is fit, fine, and has been adopted by a kind, loving family where she is living her best life.",
+    category: "Dogs"
   }
 ];
 
