@@ -35,8 +35,8 @@ const MOCK_RESCUES = [
     animalType: "Dog",
     date: "August 10, 2026",
     location: "National Highway, Jaitsar",
-    beforeImg: "/images/puppy_fracture_before.jpg",
-    afterImg: "/images/puppy_fracture_after.jpg",
+    beforeImg: "/images/puppy_fracture_after.jpg",
+    afterImg: "/images/puppy_fracture_before.jpg",
     story: "Rocky, a young puppy, was struck by a speeding vehicle on the busy highway, resulting in a severe fracture to his front right leg. Curled up in pain and unable to move, he was in a critical state when we received the call. Our emergency rescue team rushed to the spot, brought him to the clinic, and carefully set and bandaged his fractured leg. With daily medication, plaster care, and nutritious food at our shelter, Rocky recovered quickly. Within weeks, he was fit and fine, and today he is happily running around and playing with other dogs in our sanctuary.",
     category: "Dogs"
   }
