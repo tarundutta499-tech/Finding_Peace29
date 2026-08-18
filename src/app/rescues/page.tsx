@@ -39,6 +39,17 @@ const MOCK_RESCUES = [
     afterImg: "/images/puppy_fracture_before.jpg",
     story: "Rocky, a young puppy, was struck by a speeding vehicle on the busy highway, resulting in a severe fracture to his front right leg. Curled up in pain and unable to move, he was in a critical state when we received the call. Our emergency rescue team rushed to the spot, brought him to the clinic, and carefully set and bandaged his fractured leg. With daily medication, plaster care, and nutritious food at our shelter, Rocky recovered quickly. Within weeks, he was fit and fine, and today he is happily running around and playing with other dogs in our sanctuary.",
     category: "Dogs"
+  },
+  {
+    id: 4,
+    title: "Lakshmi: Overcoming Prolapse Disease",
+    animalType: "Cow",
+    date: "August 15, 2026",
+    location: "7 GB (Jaitsar)",
+    beforeImg: "/images/cow_prolapse_before.jpg",
+    afterImg: "/images/cow_prolapse_after.jpg",
+    story: "We received an urgent call from 7 GB village regarding a cow suffering from a severe, life-threatening uterine prolapse. She was in excruciating pain, and the exposed tissue was at high risk of a fatal infection. Our medical team immediately reached the location, carefully cleaned and disinfected the area, performed the complex tissue reduction and replacement, and secured it. After several days of intensive antibiotic care, wound dressing, and special feeding at our shelter, the cow made a full recovery. Today, she is completely healthy, infection-free, and living happily in our sanctuary.",
+    category: "Cows"
   }
 ];
 
