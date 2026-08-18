@@ -9,39 +9,6 @@ import { Calendar, MapPin, Search } from "lucide-react";
 const MOCK_RESCUES = [
   {
     id: 1,
-    title: "Raju the Abandoned Calf",
-    animalType: "Cow",
-    date: "May 15, 2026",
-    location: "Main Market, Jaitsar",
-    beforeImg: "/images/img1.jpg",
-    afterImg: "/images/img3.jpg",
-    story: "Raju was found wandering near the main market with a severe leg injury. He was malnourished and in pain. Our team brought him to the shelter, performed minor surgery on his leg, and provided him with a nutritious diet. After 3 months of care, Raju is now healthy and playful.",
-    category: "Cows"
-  },
-  {
-    id: 2,
-    title: "Sheru's Second Chance",
-    animalType: "Dog",
-    date: "April 22, 2026",
-    location: "Railway Station Road",
-    beforeImg: "/images/img6.jpg",
-    afterImg: "/images/img7.jpg",
-    story: "Hit by a speeding vehicle, Sheru was left paralyzed on the road. We rushed him to our emergency care unit. Though he lost the use of his hind legs, we custom-built a dog wheelchair for him. Today, he runs faster than ever!",
-    category: "Dogs"
-  },
-  {
-    id: 3,
-    title: "Rescuing an Injured Kite",
-    animalType: "Bird",
-    date: "March 10, 2026",
-    location: "City Park",
-    beforeImg: "/images/img4.jpg",
-    afterImg: "/images/img2.jpg",
-    story: "Found tangled in glass-coated kite string (manja), this beautiful bird had deep cuts on its wings. After careful extraction and weeks of rehabilitation in our aviary, it was successfully released back into the wild.",
-    category: "Birds"
-  },
-  {
-    id: 4,
     title: "Ganga: Saved from a Deep Trench",
     animalType: "Cow",
     date: "July 12, 2026",
