@@ -17,6 +17,17 @@ const MOCK_RESCUES = [
     afterImg: "/images/cow_crane_rescue.jpg",
     story: "Our team received an urgent call about a cow that had slipped and fallen deep into a narrow, dark, and deep ground borewell trench. Trapped several feet below, the space was too confined for manual lifting. Our volunteers worked tirelessly for hours, ensuring the distressed cow had air, water, and emotional comfort. Collaborating with local operators, we secured a JCB crane and rigged a custom hoisting harness. With precise guidance, Ganga was lifted out safely without major injuries. Today, she is fully recovered and reunited with her herd.",
     category: "Cows"
+  },
+  {
+    id: 2,
+    title: "Dollar: Overcoming Human Cruelty",
+    animalType: "Dog",
+    date: "August 3, 2026",
+    location: "Sector 4, Jaitsar",
+    beforeImg: "/images/dog_burn_before.jpg",
+    afterImg: "/images/dog_burn_after.jpg",
+    story: "Dollar suffered a horrific act of cruelty when someone intentionally set fire, causing severe burns to his face and snout. We received a distress call and rushed to the location immediately. Our medical team cleaned his wounds, applied antiseptic treatments, and administered pain relief. Over weeks of intense care and love at our sanctuary, Dollar showed incredible resilience. Today, his burns have completely healed, and he is a healthy, energetic, and happy dog who trusts humans again.",
+    category: "Dogs"
   }
 ];
 
