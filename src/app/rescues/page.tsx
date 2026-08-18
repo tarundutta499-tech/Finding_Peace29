@@ -39,6 +39,17 @@ const MOCK_RESCUES = [
     afterImg: "/images/img2.jpg",
     story: "Found tangled in glass-coated kite string (manja), this beautiful bird had deep cuts on its wings. After careful extraction and weeks of rehabilitation in our aviary, it was successfully released back into the wild.",
     category: "Birds"
+  },
+  {
+    id: 4,
+    title: "Ganga: Saved from a Deep Trench",
+    animalType: "Cow",
+    date: "July 12, 2026",
+    location: "Outskirts of Jaitsar",
+    beforeImg: "/images/cow_hole.jpg",
+    afterImg: "/images/cow_crane_rescue.jpg",
+    story: "Our team received an urgent call about a cow that had slipped and fallen deep into a narrow, dark, and deep ground borewell trench. Trapped several feet below, the space was too confined for manual lifting. Our volunteers worked tirelessly for hours, ensuring the distressed cow had air, water, and emotional comfort. Collaborating with local operators, we secured a JCB crane and rigged a custom hoisting harness. With precise guidance, Ganga was lifted out safely without major injuries. Today, she is fully recovered and reunited with her herd.",
+    category: "Cows"
   }
 ];
 
