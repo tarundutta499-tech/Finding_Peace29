@@ -61,6 +61,17 @@ const MOCK_RESCUES = [
     afterImg: "/images/dog_cancer_after.jpg",
     story: "Billo was found with a large, painful malignant tumor growing on her neck and was diagnosed with cancer in 2023. Our team took immediate action and initiated a rigorous chemotherapy plan. Over a long and challenging four months of treatment, Billo showed incredible strength and recovered fully, beating cancer completely. Today, she is fit, fine, and has been adopted by a kind, loving family where she is living her best life.",
     category: "Dogs"
+  },
+  {
+    id: 6,
+    title: "Jonny: Healing Double Fractures",
+    animalType: "Dog",
+    date: "August 16, 2026",
+    location: "Jaitsar",
+    beforeImg: "/images/jonny_fracture_before.jpg",
+    afterImg: "/images/jonny_fracture_after.jpg",
+    story: "Jonny, a sweet 6-month-old pup, was involved in a severe car accident on the road, resulting in fractures to both of his front legs. Left completely unable to stand or walk, he was in severe pain when we rescued him. Our medical team carefully set his broken bones and put plaster casts on both front legs. Over the course of weeks of careful recovery, treatment, and nutritious feed at our shelter, Jonny showed remarkable healing progress. Today, he has fully recovered, his casts are off, and he is enjoying his life happily running around the sanctuary.",
+    category: "Dogs"
   }
 ];
 
